@@ -8,7 +8,7 @@ setuptools.setup(
     version="1.0",
     author="Wes Hardaker",
     author_email="opensource@hardakers.net",
-    description="A UI (alpha) plugin that produces a live graph when using gold-mine",
+    description="A UI plugin that adds graphical extensions to gold-miner",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://gitlab.com/isi-apropos/gold-mine-ui",
