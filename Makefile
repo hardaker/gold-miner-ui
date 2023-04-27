@@ -2,7 +2,7 @@ it:
 	python3 setup.py build
 
 testit:
-	PYTHONPATH=. pytest-3 || exit 0
+	PYTHONPATH=../gold-miner:. pytest-3 || exit 0
 
 package: testit
 	rm -rf dist
