@@ -4,7 +4,7 @@ import multiprocessing
 import threading
 import time
 import queue
-from apropos.goldmine.output.goldOutput import GoldOutput
+from apropos.goldminer.output.goldOutput import GoldOutput
 
 from PyQt5.QtCore import QDateTime, Qt, QTimer
 from PyQt5.QtWidgets import (
@@ -51,7 +51,7 @@ class QtDataViewer(QDialog):
 
         # set styles
         self.graph.setBackground("w")
-        self.graph.setTitle("gold-mine analysis")
+        self.graph.setTitle("gold-miner analysis")
         self.pen = pg.mkPen(color=(0, 0, 255))
 
         # a container for storing data by identifier

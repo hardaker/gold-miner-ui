@@ -11,7 +11,7 @@ setuptools.setup(
     description="A UI plugin that adds graphical extensions to gold-miner",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://gitlab.com/isi-apropos/gold-mine-ui",
+    url="https://gitlab.com/isi-apropos/gold-miner-ui",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -29,16 +29,16 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": [
-            "gold-mine-auditor = apropos.goldmine.tools.auditor:main",
-            "gold-mine-tande = apropos.goldmine.tools.tande:main",
-            "gold-mine-fingerprint = apropos.goldmine.tools.fingerprinter:main",
+            "gold-miner-auditor = apropos.goldminer.tools.auditor:main",
+            "gold-miner-tande = apropos.goldminer.tools.tande:main",
+            "gold-miner-fingerprint = apropos.goldminer.tools.fingerprinter:main",
         ]
     },
     python_requires=">=3.6",
     test_suite="nose.collector",
     tests_require=["nose"],
     package_data={
-        "apropos.goldmine.reports": [
+        "apropos.goldminer.reports": [
             "template.md",
             "summary-template.md",
             "template.html",

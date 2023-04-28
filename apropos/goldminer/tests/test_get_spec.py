@@ -15,7 +15,7 @@ test:
       testspec: four
 """
 
-    from apropos.goldmine.tools.tande import TestAndEval
+    from apropos.goldminer.tools.tande import TestAndEval
 
     c = TestAndEval()
 

@@ -28,10 +28,10 @@ from logging import debug, info, warning, error, critical
 from concurrent.futures import ProcessPoolExecutor
 
 # our modules
-from apropos.goldmine.trainer import GoldMineTrainer
-from apropos.goldmine.pickaxe.pickaxe import PickAxe
-from apropos.goldmine.tools.aggregator import aggregate_results
-from apropos.goldmine.tools.auditor import calculate_similarities, plot_similarities
+from apropos.goldminer.trainer import GoldMineTrainer
+from apropos.goldminer.pickaxe.pickaxe import PickAxe
+from apropos.goldminer.tools.aggregator import aggregate_results
+from apropos.goldminer.tools.auditor import calculate_similarities, plot_similarities
 
 
 def parse_args():
@@ -169,11 +169,11 @@ class TestAndEval:
     def get_dist_file(self, filename, output_directory):
         "Copies a FILENAME found either local path or distribution install to OUTPUT_DIRECTORY"
         output_file = os.path.join(output_directory, filename)
-        local_file = os.path.join("apropos/goldmine/reports", filename)
+        local_file = os.path.join("apropos/goldminer/reports", filename)
         if os.path.exists(local_file):
             shutil.copy(local_file, output_file)
         else:
-            source_stream = pkgutil.get_data("apropos.goldmine.reports", filename)
+            source_stream = pkgutil.get_data("apropos.goldminer.reports", filename)
             f = open(output_file, "wb")
             f.write(source_stream)
             f.close()
@@ -399,7 +399,7 @@ class TestAndEval:
             )
         debug(f"  output results:  {test['file']} => {output_file}")
         # default to FSDB output formatted
-        from apropos.goldmine.output.goldFsdb import GoldFsdb
+        from apropos.goldminer.output.goldFsdb import GoldFsdb
 
         axe.output = GoldFsdb(out_file=output_file, save_values=True)
 
@@ -922,7 +922,7 @@ class TestAndEval:
             "--toc-depth",
             "2",
             "--metadata",
-            "title=gold-mine-report",
+            "title=gold-miner-report",
         ]
         debug("running: " + " ".join(cmd))
         subprocess.run(["bash", "-c", " ".join(cmd)])
@@ -934,7 +934,7 @@ class TestAndEval:
                     if line.startswith("<p><img"):
                         line = line.replace("<img ", '<img class="img-fluid" ')
                     line = line.replace(
-                        "gold-mine-report", "Gold-Mine Test and Evaluation Report"
+                        "gold-miner-report", "Gold-Mine Test and Evaluation Report"
                     )
                     outh.write(line)
 
