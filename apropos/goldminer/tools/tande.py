@@ -20,7 +20,7 @@ import json
 import datetime
 
 from hashlib import sha256
-from typing import Any, Union
+from typing import Any, Union, List
 from rich import print
 from rich.console import Console
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter, FileType
@@ -123,8 +123,8 @@ class TestAndEval:
         plan: dict,
         sub_plan_component: dict,
         config_name: str,
-        paths: Union[str, list[str]] = [],
-        default = None,
+        paths: Union[str, List[str]] = [],
+        default: Any = None,
     ):
 
         # let the CLI override everything
