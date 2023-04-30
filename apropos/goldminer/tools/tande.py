@@ -124,7 +124,7 @@ class TestAndEval:
         sub_plan_component: dict,
         config_name: str,
         paths: Union[str, list[str]] = [],
-        default: Any = None,
+        default = None,
     ):
 
         # let the CLI override everything
