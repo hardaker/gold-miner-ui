@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="gold-miner-ui",
-    version="1.1",
+    version="1.2",
     author="Wes Hardaker",
     author_email="opensource@hardakers.net",
     description="A UI plugin that adds graphical extensions to gold-miner",
