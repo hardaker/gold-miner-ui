@@ -194,7 +194,7 @@ class TestAndEval:
         # count = self.get_spec(plan, spec, "packet_count", plantype, 0)
 
         if not os.path.exists(new_filename):
-            info(f"filtering: {orig_file} with {pkt_filter=} to {new_filename}")
+            info(f"filtering: {orig_file} with {pkt_filter} to {new_filename}")
             subprocess.run(
                 ["tcpdump", "-r", orig_file, "-w", new_filename, "-s", "0", pkt_filter]
             )
@@ -543,10 +543,10 @@ class TestAndEval:
             filtered = saved_result["filtered"]
             print(f"---- {trace_label:<20} {file}")
             if filtered != file:
-                print(f"   {filtered=}")
+                print(f"   {filtered}")
 
             if len(results) == 0:
-                warning("No identifier found in results for {filtered=}")
+                warning("No identifier found in results for {filtered}")
             for identifier in results:
                 max_val = -100
                 best_label = None

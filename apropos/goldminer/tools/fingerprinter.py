@@ -69,7 +69,7 @@ def create_fingerprint_plot(args, max_pkt_len, max_value, results):
     if np.sqrt(num_plots) != nrows:
         nrows += 1
     ncols = nrows
-    info(f"plot dimensions: {num_plots=} {nrows=} {ncols=}")
+    info(f"plot dimensions: {num_plots} {nrows} {ncols}")
     fig, axes = plt.subplots(
         nrows=nrows, ncols=ncols, sharex=True, subplot_kw={"projection": "polar"}
     )
@@ -79,8 +79,8 @@ def create_fingerprint_plot(args, max_pkt_len, max_value, results):
     labels = [0]
     for i in range(0, 8):
         labels.append(f"{int((i+1) * max_pkt_len/8)}")
-    info(f"{max_pkt_len=}")
-    info(f"{labels=}")
+    info(f"{max_pkt_len}")
+    info(f"{labels}")
 
     max_axes_x = ncols - 1
     max_axes_y = nrows - 1
@@ -134,10 +134,10 @@ def create_fingerprint_plot(args, max_pkt_len, max_value, results):
         color = colors[n % len(colors)]
         info(f"color: {color}")
 
-        info(f"{key:<20s} {theta[0:5]=}")
-        info(f"{key:<20s} {theta[-5:]=}")
-        info(f"{key:<20s} {r[0:5]=}")
-        info(f"{key:<20s} {r[-5:]=}")
+        info(f"{key:<20s} {theta[0:5]}")
+        info(f"{key:<20s} {theta[-5:]}")
+        info(f"{key:<20s} {r[0:5]}")
+        info(f"{key:<20s} {r[-5:]}")
         axes[axes_x, axes_y].plot(theta, r, color=color)
         axes[max_axes_x, max_axes_y].plot(theta, r, color=color, alpha=0.3)
         axes[axes_x, axes_y].grid(True)
@@ -178,7 +178,7 @@ def create_violin_plot(args, max_pkt_len, max_value, results):
 
     # create a figure and NxN subplots (with not all filled)
     num_plots = len(results)
-    info(f"plot dimensions: {num_plots=}")
+    info(f"plot dimensions: {num_plots}")
     fig, axes = plt.subplots(nrows=num_plots - 1, ncols=num_plots - 1)
 
     for n, key1 in enumerate(results):
